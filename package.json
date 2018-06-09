@@ -1,0 +1,27 @@
+{
+  "name": "real-estate-listings",
+  "version": "1.0.0",
+  "description": "Welcome to weekend challenge 4! This weekend, you will take on the role of an application developer for a real estate company. You will be working with data that we will be providing to you. After importing the data (instructions below), you will find information for properties that are either for \"rent\" or for \"sale\".",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhickey77/real-estate-listings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhickey77/real-estate-listings/issues"
+  },
+  "homepage": "https://github.com/bhickey77/real-estate-listings#readme",
+  "dependencies": {
+    "angular": "^1.7.1",
+    "angular-route": "^1.7.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pg": "^7.4.3"
+  }
+}

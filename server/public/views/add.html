@@ -1,0 +1,24 @@
+<h2>add</h2>
+<section ng-controller="AddController as AC">
+    <form>
+        <input type="text" ng-model="AC.price" placeholder="listing price">
+        <input type="text" ng-model="AC.sqft" placeholder="square feet">
+        <input type="text" ng-model="city" placeholder="city">
+        <select ng-model="AC.type">
+            <option selected disabled>Choose Type of Listing</option>
+            <option value="rent">Rent</option>
+            <option value="buy">Sell</option>
+        </select>
+        <select ng-model="AC.image">
+            <option selected disabled>Choose Image for Listing</option>
+            <option value="classic-flats.jpg" formControlName="agree">Classic Flats</option>
+            <option value="haunted.png">Haunted</option>
+            <option value="older.jpg">Older</option>
+            <option value="rental.jpg">Rental</option>
+            <option value="rental2.jpg">Rental 2</option>
+            <option value="shiny.jpg">Shiny</option>
+            <option value="stony.jpg">Stony</option>
+        </select>
+        <input type="submit" value="Submit Listing" ng-click="AC.addListing()">
+    </form>
+</section>
