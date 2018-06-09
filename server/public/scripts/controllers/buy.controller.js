@@ -9,8 +9,6 @@ app.controller('BuyController', function(BuyService){
         });
     };
     vm.deleteListing = function(id){
-        console.log('hi');
-        
         BuyService.deleteBuyListingFromServer(id).then(function(){
             vm.getBuyListings();
         });

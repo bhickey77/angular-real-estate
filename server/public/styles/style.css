@@ -26,7 +26,7 @@ img {
 }
 
 section {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #previewImage {
@@ -37,4 +37,8 @@ section {
 
 #previewSection {
     margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
 }

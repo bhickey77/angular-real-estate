@@ -12,5 +12,13 @@ app.controller('AddController', function(AddService){
         }      
         console.log('obj to send', objectToSend);
         AddService.sendListingToServer(objectToSend);
+        vm.resetFields();
+    }
+    vm.resetFields = function(){
+        vm.price = '';
+        vm.sqft = '';
+        vm.city = '';
+        vm.type = '';
+        vm.image = 'choose';
     }
 })

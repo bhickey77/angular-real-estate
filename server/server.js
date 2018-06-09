@@ -24,7 +24,7 @@ app.post('/listing', (req, res) => {
 
 app.get('/rentlisting', (req, res) => {
     console.log(`Getting in /rentlisting`);
-    let queryText = "SELECT * FROM listings WHERE type = 'rent'";
+    let queryText = `SELECT * FROM listings WHERE type = 'rent' ORDER BY price` ;
     pool.query(queryText).then(results => {
         console.log(`Received from database: ${results}`);
         res.send(results.rows);
@@ -36,7 +36,7 @@ app.get('/rentlisting', (req, res) => {
 
 app.get('/buylisting', (req, res) => {
     console.log(`Getting in /buylisting`);
-    let queryText = `SELECT * FROM listings WHERE type = 'sale'`;
+    let queryText = `SELECT * FROM listings WHERE type = 'sale' ORDER BY price`;
     pool.query(queryText).then(results => {
         console.log(`Received from database: ${results}`);
         res.send(results.rows);
