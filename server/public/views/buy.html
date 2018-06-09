@@ -1,4 +1,16 @@
-<h2>buy</h2>
 <section ng-controller="BuyController as BC">
-    {{BC.message}}
+    <div class="row">
+        <div ng-repeat="listing in BC.listings" class="col-lg-3 col-md-4 col-sm-6">
+            <div class="listing">
+                <div class="card bg-light border-light rounded-bottom ">
+                    <img class="card-img-top img-responsive" ng-src="../images/{{listing.image_path}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="card-text">{{listing.city}}</h4>
+                        <h4 class="card-text">{{listing.sqft}} sq ft</h4>
+                        <a ng-click="BC.deletListing(listing.id)" class="btn btn-danger btn-sm">Delete Listing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

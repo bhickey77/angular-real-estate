@@ -1,24 +1,48 @@
-<h2>add</h2>
 <section ng-controller="AddController as AC">
     <form>
-        <input type="text" ng-model="AC.price" placeholder="listing price">
-        <input type="text" ng-model="AC.sqft" placeholder="square feet">
-        <input type="text" ng-model="city" placeholder="city">
-        <select ng-model="AC.type">
-            <option selected disabled>Choose Type of Listing</option>
-            <option value="rent">Rent</option>
-            <option value="buy">Sell</option>
-        </select>
-        <select ng-model="AC.image">
-            <option selected disabled>Choose Image for Listing</option>
-            <option value="classic-flats.jpg" formControlName="agree">Classic Flats</option>
-            <option value="haunted.png">Haunted</option>
-            <option value="older.jpg">Older</option>
-            <option value="rental.jpg">Rental</option>
-            <option value="rental2.jpg">Rental 2</option>
-            <option value="shiny.jpg">Shiny</option>
-            <option value="stony.jpg">Stony</option>
-        </select>
-        <input type="submit" value="Submit Listing" ng-click="AC.addListing()">
+        <div class="form-group">
+                <label>Location</label>
+                <input type="text" class="form-control" ng-model="AC.city" placeholder="Minneapolis, Chicago, New York, etc...">
+        </div>
+        <div class="form-group">
+            <label>Listing Price</label>
+            <input type="number" class="form-control" ng-model="AC.price" placeholder="$200,000, $50,000, etc...">
+        </div>
+        <div class="form-group">
+            <label>Square Feet</label>
+            <input type="number" class="form-control" ng-model="AC.sqft" placeholder="2000, 1000, etc...">
+        </div>
+        <fieldset class="form-group" ng-model="AC.type">
+            <legend>Type of Listing</legend>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="rent" checked>
+                Rental
+            </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="buy">
+                For Sale
+            </label>
+        </fieldset>
+        <div class="form-group">
+            <label>Listing Image</label>
+            <select class="form-control" ng-model="AC.image">
+                <option value="choose" disabled>Choose your property image</option>
+                <option value="classic-flats.jpg">Classic Flats</option>
+                <option value="haunted.png">Haunted</option>
+                <option value="older.jpg">Older</option>
+                <option value="rental.jpg">Rental</option>
+                <option value="rental2.jpg">Rental 2</option>
+                <option value="shiny.jpg">Shiny</option>
+                <option value="stony.jpg">Stony</option>
+            </select>
+        </div>
+        <input type="submit" value="Submit Listing" ng-click="AC.addListing()" class="btn btn-primary">
     </form>
+    <div id="previewSection">
+        <h3>Image preview</h3>
+        <img id="previewImage" src="../images/{{AC.image}}" alt="">
+    </div>
 </section>

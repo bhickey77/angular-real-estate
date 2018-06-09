@@ -1,13 +1,3 @@
-CREATE TABLE listings (
-    id serial primary key,
-    price integer,
-    sqft integer,
-    type varchar(4),
-    city varchar(20),
-    image_path varchar(30)
-)
-
-
 INSERT INTO "listings" ("cost", "sqft", "type", "city", "image_path")
 VALUES (123000, 1500, 'sale', 'Forest Lake', 'shiny.jpg'),
 (90000, 1200, 'sale', 'Blaine', 'stony.jpg'),

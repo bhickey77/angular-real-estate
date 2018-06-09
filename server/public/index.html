@@ -9,8 +9,9 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="vendors/bootstrap.css">
+        <link rel="stylesheet" href="vendors/bootstrap.min.css">
         <link rel="stylesheet" href="styles/style.css">
+        <script src="vendors/jquery.min.js"></script>
         <script src="vendors/angular.min.js"></script>
         <script src="vendors/angular-route.min.js"></script>
         <script src="app.js"></script>
@@ -25,20 +26,36 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Real Estate Listings</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#!/buy">Buy</a></li>
-                <li><a href="#!/rent">Rent</a></li>
-            </ul>
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-light sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Property Center</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Add a Listing <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!/buy">For Sale</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!/rent">Rentals</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        <ng-view>
-            <!-- 
-                What shows here is configured in 
-                the client.js with the $routeProvider.
-            -->
-        </ng-view>
+        <div class="container">
+            <ng-view>
+                <!-- 
+                    What shows here is configured in 
+                    the client.js with the $routeProvider.
+                -->
+            </ng-view>
+        </div>
+        <script src="vendors/bootstrap.min.js"></script>
         <script src="" async defer></script>
     </body>
 </html>
