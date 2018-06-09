@@ -5,9 +5,10 @@
                 <div class="card bg-light border-light rounded-bottom ">
                     <img class="card-img-top img-responsive" ng-src="../images/{{listing.image_path}}" alt="Card image cap">
                     <div class="card-body">
+                        <h3 class="card-text">{{listing.price}}/month</h3>
                         <h4 class="card-text">{{listing.city}}</h4>
                         <h4 class="card-text">{{listing.sqft}} sq ft</h4>
-                        <a ng-click="RC.deletListing(listing.id)" class="btn btn-danger btn-sm">Delete Listing</a>
+                        <a ng-click="RC.deleteListing(listing.id)" class="btn btn-danger btn-sm">Delete Listing</a>
                     </div>
                 </div>
             </div>

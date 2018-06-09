@@ -12,17 +12,17 @@
             <label>Square Feet</label>
             <input type="number" class="form-control" ng-model="AC.sqft" placeholder="2000, 1000, etc...">
         </div>
-        <fieldset class="form-group" ng-model="AC.type">
+        <fieldset ng-model="AC.type" class="form-group">
             <legend>Type of Listing</legend>
             <div class="form-check">
             <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="rent" checked>
+                <input type="radio" ng-model="AC.type" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="rent" checked>
                 Rental
             </label>
             </div>
             <div class="form-check">
             <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="buy">
+                <input type="radio" ng-model="AC.type" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="buy">
                 For Sale
             </label>
         </fieldset>
@@ -43,6 +43,6 @@
     </form>
     <div id="previewSection">
         <h3>Image preview</h3>
-        <img id="previewImage" src="../images/{{AC.image}}" alt="">
+        <img id="previewImage" ng-src="../images/{{AC.image}}" alt="">
     </div>
 </section>

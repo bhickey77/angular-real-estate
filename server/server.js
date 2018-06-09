@@ -36,7 +36,7 @@ app.get('/rentlisting', (req, res) => {
 
 app.get('/buylisting', (req, res) => {
     console.log(`Getting in /buylisting`);
-    let queryText = "SELECT * FROM listings WHERE type = 'sale'";
+    let queryText = `SELECT * FROM listings WHERE type = 'sale'`;
     pool.query(queryText).then(results => {
         console.log(`Received from database: ${results}`);
         res.send(results.rows);
@@ -48,9 +48,9 @@ app.get('/buylisting', (req, res) => {
 
 app.delete('/listing/:id', (req, res) => {
     console.log(`Deleting in /listing`);
-    let queryText = `DELETE FROM listings WHERE id = ${id}`;
+    let queryText = `DELETE FROM listings WHERE id = '${req.params.id}'`;
     pool.query(queryText).then(results => {
-        console.log(`Deleted fromn database ${id}`);
+        console.log(`Deleted fromn database ${req.params.id}`);
         res.sendStatus(200);
     }).catch(error => {
         console.log(`Error in deleting: ${error}`);
