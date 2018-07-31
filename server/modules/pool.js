@@ -10,6 +10,7 @@ console.log(JSON.stringify(params));
 const config = {
     database: params.pathname.split('/')[1],
     port: params.port,
+    host: params.hostname,
     user: auth[0],
     password: auth[1],
     max: 10,
