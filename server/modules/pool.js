@@ -4,8 +4,7 @@ const Pool = pg.Pool;
 const DATABASE_NAME = process.env.DATA_URL;
 const config = {
     database: DATABASE_NAME,
-    host: process.env.PORT,
-    port: 5432,
+    port: process.env.PORT,
     max: 10,
     idelTimeoutMillis: 30000
 }
