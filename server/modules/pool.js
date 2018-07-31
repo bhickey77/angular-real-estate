@@ -5,6 +5,8 @@ const url = require('url');
 const params = url.parse(process.env.DATABASE_URL);
 const auth = params.auth.split(':');
 
+console.log(JSON.stringify(params));
+
 const config = {
     database: params.pathname.split('/')[1],
     port: params.port,
