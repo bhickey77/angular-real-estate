@@ -1,12 +1,12 @@
 const pg = require('pg');
 const Pool = pg.Pool;
 
-const { Client } = require('pg');
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true,
-  });  
-client.connect();
+// const { Client } = require('pg');
+// const client = new Client({
+//     connectionString: process.env.DATABASE_URL,
+//     ssl: true,
+//   });  
+// client.connect();
 
 
 const DATABASE_NAME = process.env.DATA_URL;
