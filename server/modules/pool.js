@@ -16,7 +16,7 @@ const config = {
     host: 'ec2-23-23-242-163.compute-1.amazonaws.com',
     max: 10,
     idelTimeoutMillis: 30000,
-    ssl: tru,
+    ssl: true,
 }
 
 const pool = new Pool(config);
