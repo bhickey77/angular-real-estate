@@ -10,6 +10,10 @@ const config = {
     idelTimeoutMillis: 30000
 }
 
+if(process.env.DATABASE_URL){
+    config.ssl = true;
+}
+
 const pool = new Pool(config);
 
 pool.on('connect', client => {
