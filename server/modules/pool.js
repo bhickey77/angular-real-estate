@@ -32,7 +32,7 @@ if(process.env.DATABASE_URL){
 const pool = new Pool(config);
 
 pool.on('connect', client => {
-    console.log(`Connected to database ${DATABASE_NAME}`);
+    console.log(`Connected to database`);
 });
 
 pool.on('error', (err, client) => {
