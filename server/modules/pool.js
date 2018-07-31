@@ -1,16 +1,22 @@
 const pg = require('pg');
 const Pool = pg.Pool;
 
+const { Client } = require('pg');
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: true,
+  });  
+client.connect();
+
+
 const DATABASE_NAME = process.env.DATA_URL;
 const config = {
     database: DATABASE_NAME,
     port: process.env.PORT,
+    host: 'ec2-23-23-242-163.compute-1.amazonaws.com',
     max: 10,
-    idelTimeoutMillis: 30000
-}
-
-if(process.env.DATABASE_URL){
-    config.ssl = true;
+    idelTimeoutMillis: 30000,
+    ssl: tru,
 }
 
 const pool = new Pool(config);
