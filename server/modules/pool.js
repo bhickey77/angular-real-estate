@@ -1,4 +1,4 @@
-const pg = require('pg');
+const pg = require('pg').native;
 const Pool = pg.Pool;
 
 const DATABASE_NAME = process.env.DATA_URL;
