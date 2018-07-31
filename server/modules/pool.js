@@ -2,21 +2,32 @@ const pg = require('pg');
 const Pool = pg.Pool;
 const url = require('url');
 
-const params = url.parse(process.env.DATABASE_URL);
-const auth = params.auth.split(':');
 
-console.log(JSON.stringify(params));
+let config = {}
 
-const config = {
-    database: params.pathname.split('/')[1],
-    port: params.port,
-    host: params.hostname,
-    user: auth[0],
-    password: auth[1],
-    max: 10,
-    idelTimeoutMillis: 30000,
-    ssl: true,
+if(process.env.DATABASE_URL){
+    const params = url.parse(process.env.DATABASE_URL);
+    const auth = params.auth.split(':');
+    config = {
+        database: params.pathname.split('/')[1],
+        port: params.port,
+        host: params.hostname,
+        user: auth[0],
+        password: auth[1],
+        max: 10,
+        idelTimeoutMillis: 30000,
+        ssl: true,
+    }
+} else {
+    config = {
+        database: 'listings',
+        host: 'localhost',
+        port: 5432,
+        max: 10,
+        idelTimeoutMillis: 30000
+    }
 }
+
 
 const pool = new Pool(config);
 
